@@ -1,0 +1,32 @@
+{
+  "plugins": [
+    "eslint-plugin-fiori-custom",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "./node_modules/eslint-plugin-fiori-custom/configure.eslintrc",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "ignorePatterns": [
+    "webapp/localService/**",
+    "webapp/test/**",
+    "dist/**",
+    ".eslintignore.js"
+  ],
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ],
+    "tsconfigRootDir": ".",
+    "sourceType": "module"
+  }
+}

@@ -1,0 +1,29 @@
+<mvc:View controllerName="ts02.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Table 
+        growing="true"
+        growingThreshold="10"
+        items="{ 
+            path: '/People' 
+            }">
+            <columns>
+                <Column>
+                    <Label text="Category Name" />
+                </Column>
+                <Column>
+                    <Label text="Description" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{UserName}" />
+                        <Text text="{FirstName}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
