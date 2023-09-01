@@ -7,18 +7,18 @@ export default class View1 extends BaseController {
 
   public onInit(): void {
 
-    this.howToTypes();
-    this.Training0201();
-    this.howToFunction();
-    this.Training0202();
-    this.howToClass01();
-    this.howToClass02();
-    this.howToClass03();
+    debugger;
+    // this.howToTypes();
+    // this.Training0201();
+    // this.howToFunction();
+    // this.Training0202();
+    // this.howToClass01();
+    // this.howToClass02();
+    // this.howToClass03();
 
     const instanz = new OutSource();
     instanz.howToClass04();
 
-    debugger;
     const shoppingList = new ShoppingList();
     shoppingList.addItem({ name: 'Milk', quantity: 1, price: 1.99 });
     shoppingList.addItem({ name: 'Bread', quantity: 2, price: 2.49 });

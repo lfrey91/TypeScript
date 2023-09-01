@@ -9,37 +9,38 @@ export default class BaseController extends Controller {
 
     // Boolen
     let isDone: boolean = false;
-    typeof (isDone);
+    console.log(typeof (isDone));
 
     // Number
     let decimal: number = 6;
     let hex: number = 0xf00d;
     let binary: number = 0b1010;
     let octal: number = 0o744;
-    typeof (decimal);
-    typeof (hex);
-    typeof (binary);
-    typeof (octal);
+    console.log(typeof (decimal));
+    console.log(typeof (hex));
+    console.log(typeof (binary));
+    console.log(typeof (octal));
 
     // String
     let name: string = "Max Mustermann";
-    typeof (name);
+    console.log(typeof (name));
 
     // Any
     let notSure: any = "kann alles sein";
     notSure = 42;
+    console.log(typeof (notSure));
     notSure = true;
-    typeof (notSure);
+    console.log(typeof (notSure));
 
     // Array
     let list: number[] = [1, 2, 3];
     let fruits: Array<string> = ["Apfel", "Birne", "Banane"];
-    typeof (list);
-    typeof (fruits);
+    console.log(typeof (list));
+    console.log(typeof (fruits));
 
     // tuple
     let tuple: [string, number] = ["Max Mustermann", 42];
-    typeof (tuple);
+    console.log(typeof (tuple));
 
     // Enum
     enum Color {
@@ -48,19 +49,19 @@ export default class BaseController extends Controller {
       Blue,
     }
     let c: Color = Color.Green;
-    typeof (c);
+    console.log(typeof (c));
 
     // Void
     function logMessage(): void {
       console.log("Eine Nachricht loggen");
     }
-    typeof (logMessage);
+    console.log(typeof (logMessage));
 
     // Null und Undefined
     let nullValue: null = null;
     let undefinedValue: undefined = undefined;
-    typeof (nullValue);
-    typeof (undefinedValue);
+    console.log(typeof (nullValue));
+    console.log(typeof (undefinedValue));
   }
 
   public Training0201(): void {
@@ -101,7 +102,7 @@ export default class BaseController extends Controller {
       const aUsers = await getUsers();
       const aEmails = aUsers.map(user => user.email);
 
-      await sendEmailToUsers('Hallo, bitte besuche die UX55.', aEmails, undefined, "Anahnang1", "Anahng2", "Anhang3");
+      await sendEmailToUsers('Hey, besuche doch die UX55.', aEmails, undefined, "Anahnang1", "Anahng2", "Anhang3");
       console.log('E-Mails erfolgreich gesendet!');
     }
 
@@ -114,6 +115,8 @@ export default class BaseController extends Controller {
     // Typiesierung von Parametern u. Rückgabewerten
     let c = add(3, 8);
     console.log(c);
+    console.log(typeof (c));
+    // c = 'Test';
     function add(a: number, b: number): number {
       return a + b;
     }
@@ -160,10 +163,10 @@ export default class BaseController extends Controller {
     console.log(generator.next()); // 3
 
     // Async-Function
-    let a = waitAndLog();
+    let a = waitAndLog(3000);
     typeof (a);
-    async function waitAndLog(): Promise<void> {
-      await wait(3000);
+    async function waitAndLog(howLong: number): Promise<void> {
+      await wait(howLong);
       console.log("Nachricht nach 3 Sekunden Wartezeit");
     }
     async function wait(ms: number): Promise<void> {
@@ -182,9 +185,9 @@ export default class BaseController extends Controller {
       name: string;
       sound: string;
     
-      constructor(name: string, sound: string) {
-        this.name = name;
-        this.sound = sound;
+      constructor(iName: string, iSound: string) {
+        this.name = iName;
+        this.sound = iSound;
       }
     
       speak(): void {
