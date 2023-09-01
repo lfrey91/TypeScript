@@ -128,6 +128,12 @@ export default class BaseController extends Controller {
       return `Hello, ${name}!`;
     }
 
+    //Multiple Return Parameter
+    console.log(multiParam(3, 'Bier'));
+    function multiParam(a:number, b:string): [number, string]{
+      return [a, b];
+    }
+
     //Optionale Parameter
     let o = greet2();
     console.log(o);
